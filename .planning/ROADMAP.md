@@ -31,11 +31,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. App disconnects cleanly (never closes the user's Chrome) when automation completes or is cancelled
   4. When Chrome's WebSocket connection drops mid-session, the app reconnects automatically (up to 3 retries) without losing progress
   5. ChromeSessionManager exposes a clear lifecycle API (connect, getPage, dispose) as a standalone module separate from automation logic
-**Plans**: TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 01-01: ChromeSessionManager module with CDP connect, launch fallback, and disconnect
-- [ ] 01-02: Reconnection handling and login status detection
+- [ ] 01-01-PLAN.md -- ChromeSessionManager module with CDP connect, launch fallback, disconnect, profile reader, and IPC wiring
+- [ ] 01-02-PLAN.md -- Reconnection with exponential backoff, login detection, profile verification, and session persistence
 
 ### Phase 2: Core Automation Refactoring
 **Goal**: The 1465-line monolith is decomposed into focused modules, selectors survive Genspark UI changes, and prompt injection works reliably with React controlled inputs
