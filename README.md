@@ -431,6 +431,93 @@ O projeto registra 4 composições no Remotion Studio:
 
 ---
 
+## Controle de Versões
+
+Este projeto usa **tags Git** e **branches** para manter um histórico seguro. Você pode voltar a qualquer versão anterior a qualquer momento.
+
+### Branches
+
+| Branch | Propósito |
+|--------|-----------|
+| `master` | Desenvolvimento ativo — trabalho do dia a dia |
+| `stable` | Última versão estável testada — só atualizada em releases |
+| `develop` | Integração de features antes de ir para master |
+
+### Versão atual: v1.0.0
+
+Consulte o [CHANGELOG.md](CHANGELOG.md) para o histórico completo de mudanças.
+
+### Criar uma nova versão (release)
+
+Quando uma funcionalidade importante estiver pronta:
+
+```bash
+# 1. Atualize o CHANGELOG.md com as mudanças
+
+# 2. Commit as mudanças
+git add .
+git commit -m "release: v1.1.0"
+
+# 3. Crie a tag
+git tag -a v1.1.0 -m "v1.1.0 - Descrição da versão"
+
+# 4. Envie tudo para o GitHub
+git push origin master
+git push origin v1.1.0
+
+# 5. Atualize a branch stable
+git checkout stable
+git merge master
+git push origin stable
+git checkout master
+```
+
+### Voltar para uma versão anterior
+
+Se algo der errado, você pode voltar facilmente:
+
+```bash
+# Ver todas as versões disponíveis
+git tag -l
+
+# Ver detalhes de uma versão
+git show v1.0.0
+
+# Voltar o código para uma versão específica (modo leitura)
+git checkout v1.0.0
+
+# Voltar para a versão atual
+git checkout master
+```
+
+### Reverter alterações ruins
+
+```bash
+# Desfazer alterações em um arquivo específico (não commitado)
+git checkout -- caminho/do/arquivo.ts
+
+# Desfazer o último commit (mantém os arquivos)
+git reset --soft HEAD~1
+
+# Voltar para o estado de uma versão e criar branch a partir dela
+git checkout -b fix-emergencia v1.0.0
+```
+
+### Comparar versões
+
+```bash
+# Ver o que mudou entre duas versões
+git diff v1.0.0 v1.1.0
+
+# Ver lista de arquivos alterados entre versões
+git diff --name-only v1.0.0 v1.1.0
+
+# Ver commits entre duas versões
+git log v1.0.0..v1.1.0 --oneline
+```
+
+---
+
 ## Licença
 
 ISC
