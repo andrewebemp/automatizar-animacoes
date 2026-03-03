@@ -1,6 +1,6 @@
 {
   "name": "automatizar-animacoes",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Gerador de vídeos com zoom em cenas e reveal progressivo",
   "main": "electron/main.js",
   "scripts": {

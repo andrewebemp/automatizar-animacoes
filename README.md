@@ -13,6 +13,7 @@ O **Automatizar Animações** transforma imagens estáticas em vídeos animados 
 - **Renderização de Vídeo**: Remotion 4.0
 - **Desenho em Canvas**: Konva.js
 - **Áudio**: WaveSurfer.js
+- **Automação de Browser**: Playwright + Puppeteer
 - **Validação**: Zod
 - **Build**: Vite + electron-builder
 
@@ -178,6 +179,20 @@ Configuração final e renderização do vídeo.
 
 ---
 
+### Modo Wizard v2 (Novo)
+
+Fluxo alternativo com integração Genspark para geração automatizada de imagens.
+
+#### Etapas:
+1. **Import** — Importar dados de projeto existente
+2. **Prompts** — Gerar e editar prompts visuais por IA
+3. **Images** — Upload e gerenciamento de imagens
+4. **Regions** — Definir regiões de animação sobre as imagens
+5. **Genspark** — Geração automatizada de imagens via Playwright + Genspark
+6. **Export** — Configuração e renderização do vídeo final
+
+---
+
 ### Modo Editor (Legado)
 
 Fluxo manual para controle total sobre a criação das animações.
@@ -313,6 +328,8 @@ Principais variáveis:
 |----------|-----|
 | `OPENAI_API_KEY` | Geração de prompts e detecção de elementos via Vision API |
 | `ANTHROPIC_API_KEY` | Alternativa para geração com IA |
+| `DEEPSEEK_API_KEY` | Geração de prompts via DeepSeek |
+| `OPENROUTER_API_KEY` | Roteamento multi-modelo |
 | `GITHUB_TOKEN` | Acesso ao GitHub CLI |
 
 ### Comandos Disponíveis
@@ -385,24 +402,31 @@ Gera o arquivo `out/video.mp4` com as configurações do projeto.
 automatizar-animacoes/
 ├── src/
 │   ├── components/
-│   │   ├── editor/          # Editor manual (canvas, cenas, elementos)
-│   │   ├── wizard/          # Interface wizard (fluxo guiado v1)
-│   │   ├── wizard-new/      # Wizard v2 (com suporte a IA e regiões)
-│   │   ├── video/           # Composições Remotion (Zoom, Timeline, Export)
-│   │   ├── region-editor/   # Editor de regiões sobre imagens
+│   │   ├── editor/          # Editor manual (canvas, cenas, elementos) — 8 arquivos
+│   │   ├── wizard/          # Interface wizard v1 (fluxo guiado 6 etapas)
+│   │   │   └── steps/       # Etapas: Script, SRT, Prompts, Images, Preview, Export
+│   │   ├── wizard-new/      # Wizard v2 (Import, Prompts, Images, Regions, Genspark, Export)
+│   │   ├── video/           # Composições Remotion (Zoom, Timeline, Export) — 13 arquivos
+│   │   ├── region-editor/   # Editor de regiões sobre imagens (Canvas, Toolbar, Preview)
 │   │   ├── timeline/        # Import/export/edição de timeline
-│   │   ├── settings/        # Configurações e APIs
+│   │   ├── settings/        # Configurações e APIs (ApiSettings, SettingsModal)
 │   │   └── mode-selector/   # Seletor de modo (editor/wizard/timeline)
 │   ├── exporters/           # Exportadores (FCPXML, MLT, OpenShot JSON)
-│   ├── hooks/               # React hooks (useProjectState, useTimelineProject)
-│   ├── types/               # TypeScript types (Scene, Element, VideoConfig)
-│   ├── utils/               # Utilitários (SRT parser, path smoothing, AI prompts)
+│   │   ├── fcpxml/          # Final Cut Pro XML
+│   │   ├── mlt/             # Kdenlive MLT
+│   │   └── json/            # OpenShot JSON
+│   ├── hooks/               # React hooks (useProjectState, useProjectNew, useTimelineProject)
+│   ├── services/            # Serviços (em desenvolvimento)
+│   ├── types/               # 13 tipos TypeScript (ProjectData, Region, ImageBlock, VideoConfig, etc.)
+│   ├── utils/               # 18 utilitários (srtParser, visionApi, whisperApi, aiPromptGenerator, etc.)
 │   ├── Root.tsx             # Raiz do Remotion (composições registradas)
 │   └── index.ts             # Entry point
-├── editor/                  # Entry point do editor visual (Vite)
+├── editor/                  # Entry point do editor visual (index.html, main.tsx, styles.css)
 ├── electron/                # Processo principal Electron
-├── out/                     # Vídeos renderizados
-├── dist-electron/           # App desktop empacotado
+│   ├── main.js              # Main process
+│   ├── preload.js           # Preload script (bridge renderer ↔ main)
+│   ├── folderWatcher.js     # Monitoramento de pastas com chokidar
+│   └── gensparkPlaywright.js # Automação Genspark via Playwright
 ├── remotion.config.ts       # Configuração do Remotion
 ├── vite.editor.config.ts    # Configuração Vite do editor
 ├── tsconfig.json            # Configuração TypeScript
@@ -443,7 +467,7 @@ Este projeto usa **tags Git** e **branches** para manter um histórico seguro. V
 | `stable` | Última versão estável testada — só atualizada em releases |
 | `develop` | Integração de features antes de ir para master |
 
-### Versão atual: v1.0.0
+### Versão atual: v2.0.0
 
 Consulte o [CHANGELOG.md](CHANGELOG.md) para o histórico completo de mudanças.
 
@@ -456,14 +480,14 @@ Quando uma funcionalidade importante estiver pronta:
 
 # 2. Commit as mudanças
 git add .
-git commit -m "release: v1.1.0"
+git commit -m "release: v2.1.0"
 
 # 3. Crie a tag
-git tag -a v1.1.0 -m "v1.1.0 - Descrição da versão"
+git tag -a v2.1.0 -m "v2.1.0 - Descrição da versão"
 
 # 4. Envie tudo para o GitHub
 git push origin master
-git push origin v1.1.0
+git push origin v2.1.0
 
 # 5. Atualize a branch stable
 git checkout stable
@@ -481,10 +505,10 @@ Se algo der errado, você pode voltar facilmente:
 git tag -l
 
 # Ver detalhes de uma versão
-git show v1.0.0
+git show v2.0.0
 
 # Voltar o código para uma versão específica (modo leitura)
-git checkout v1.0.0
+git checkout v2.0.0
 
 # Voltar para a versão atual
 git checkout master
@@ -500,20 +524,20 @@ git checkout -- caminho/do/arquivo.ts
 git reset --soft HEAD~1
 
 # Voltar para o estado de uma versão e criar branch a partir dela
-git checkout -b fix-emergencia v1.0.0
+git checkout -b fix-emergencia v2.0.0
 ```
 
 ### Comparar versões
 
 ```bash
 # Ver o que mudou entre duas versões
-git diff v1.0.0 v1.1.0
+git diff v1.0.0 v2.0.0
 
 # Ver lista de arquivos alterados entre versões
-git diff --name-only v1.0.0 v1.1.0
+git diff --name-only v1.0.0 v2.0.0
 
 # Ver commits entre duas versões
-git log v1.0.0..v1.1.0 --oneline
+git log v1.0.0..v2.0.0 --oneline
 ```
 
 ---
