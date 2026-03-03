@@ -1,0 +1,41 @@
+Whiteboard animation illustration, hand-drawn sketch style with black outlines on pure white background. Clean educational explainer aesthetic.
+
+ESTILO VISUAL OBRIGATÓRIO:
+
+ESTILO VISUAL OBRIGATÓRIO:
+- Fundo branco puro (#FFFFFF)
+- Traços pretos estilo desenho à mão/marcador
+- Elementos em azul (#0077CC) e vermelho (#CC0000) como destaques
+- Estilo stick figure para pessoas
+- Ícones simplificados e reconhecíveis
+- Layout da esquerda para direita ou de cima para baixo
+- Espaçamento generoso entre elementos para animação posterior
+
+CONTEÚDO DA CENA (6 elementos distintos para animar sequencialmente):
+Elemento 1 (00:00:49,000 - 00:00:52,240): "Mas quanto mais perto você chegar desse cenário ideal, melhor."
+  → Representar com: gráfico ascendente, seta para cima, escada
+Elemento 2 (00:00:52,520 - 00:00:55,840): "Porque assim, cada bloco da sua rotina vai render mais."
+  → Representar com: ícone representativo simples
+Elemento 3 (00:00:56,440 - 00:01:00,560): "Então a primeira coisa a se fazer, ao iniciar um bloco, é remover as distrações."
+  → Representar com: ícone representativo simples
+Elemento 4 (00:01:01,400 - 00:01:04,895): "Tudo que possa te distrair ou que facilita a procrastinação deve ser"
+  → Representar com: pessoa correndo em círculos, relógio com X
+Elemento 5 (00:01:04,920 - 00:01:05,920): "removido, se possível."
+  → Representar com: ícone representativo simples
+Elemento 6 (00:01:06,320 - 00:01:08,680): "Ou, pelo menos, ser mais difícil de acessar."
+  → Representar com: ícone representativo simples
+  
+ELEMENTOS VISUAIS SUGERIDOS:
+gráfico ascendente, seta para cima, escada, pessoa correndo em círculos, relógio com X
+
+COMPOSIÇÃO:
+- Imagem 2 de 2
+- Duração total: 17.5 segundos
+- Todos os elementos devem ter contornos claros para facilitar animação de "reveal"
+- Manter espaço entre elementos para animação sequencial
+- Cada elemento deve ser visualmente distinto e separável
+
+ASPECT RATIO: 16:9
+RESOLUÇÃO: Alta definição para vídeo
+
+NÃO INCLUIR: fotografias realistas, degradês complexos, sombras realistas, elementos 3D, cores fora da paleta especificada.

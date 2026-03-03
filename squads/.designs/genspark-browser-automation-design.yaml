@@ -1,0 +1,169 @@
+# Squad Design: genspark-browser-automation
+# Generated from codebase analysis (.planning/codebase/)
+# Created: 2026-02-16
+
+squad:
+  name: genspark-browser-automation
+  description: "Automacao confiavel de geracao de imagens via Genspark no navegador, usando conta Google logada com acesso gratuito ao Nano Banana Pro"
+  domain: browser-automation-image-generation
+
+analysis:
+  entities:
+    - Chrome Browser Session
+    - Google Account (andrewebemp@gmail.com)
+    - Genspark Image Generator
+    - Nano Banana Pro Model
+    - Chrome DevTools Protocol (CDP)
+    - Puppeteer/Playwright
+    - Electron IPC
+    - Generated Images
+    - Prompts Queue
+  workflows:
+    - connect-to-chrome (detect running Chrome, connect via CDP)
+    - generate-image (inject prompt, wait for result, download)
+    - batch-generation (sequential/parallel processing with rate limiting)
+    - session-recovery (reconnect on failure, resume from state)
+  integrations:
+    - Genspark Web UI (genspark.ai/agents/image-generator)
+    - Chrome DevTools Protocol (remote debugging)
+    - Electron Main Process (IPC handlers)
+    - Local filesystem (image output)
+  stakeholders:
+    - End User (artist/animator using the desktop app)
+
+recommendations:
+  agents:
+    - id: browser-engineer
+      role: "Especialista em automacao de navegador Chrome via CDP/Puppeteer - gerencia conexao, seletores resilientes, e deteccao de resultados via network intercept"
+      commands:
+        - connect-chrome
+        - generate-image
+        - batch-generate
+        - update-selectors
+      confidence: 0.95
+      user_added: false
+      user_modified: false
+
+    - id: ux-integrator
+      role: "Integrador frontend React - melhora GensparkStep.tsx com auto-deteccao de perfil, feedback do modelo Nano Banana Pro, e UX simplificada"
+      commands:
+        - improve-genspark-step
+        - add-model-selector
+        - simplify-config
+      confidence: 0.88
+      user_added: false
+      user_modified: false
+
+    - id: ipc-architect
+      role: "Arquiteto Electron IPC - otimiza comunicacao main/renderer, gerencia lifecycle do Chrome session, e implementa streaming de progresso"
+      commands:
+        - setup-chrome-manager
+        - setup-ipc-streaming
+        - setup-recovery
+      confidence: 0.85
+      user_added: false
+      user_modified: false
+
+  tasks:
+    - name: connect-chrome-cdp
+      agent: browser-engineer
+      description: "Conectar ao Chrome existente via CDP ou lancar com perfil Google logado"
+      entrada:
+        - google_email (string, andrewebemp@gmail.com)
+        - fallback_profile_path (string, optional)
+      saida:
+        - browser_connection (CDP WebSocket endpoint)
+        - login_status (boolean)
+        - profile_name (string)
+      confidence: 0.95
+
+    - name: resilient-selectors
+      agent: browser-engineer
+      description: "Implementar sistema de seletores auto-adaptaveis com fallback chain e cache"
+      entrada:
+        - genspark_url (string)
+      saida:
+        - selector_map (object, cached selectors for all UI elements)
+        - discovery_report (object, found elements and methods)
+      confidence: 0.90
+
+    - name: network-intercept-images
+      agent: browser-engineer
+      description: "Detectar imagens geradas via interceptacao de rede (CDP Network domain) em vez de polling DOM"
+      entrada:
+        - page_session (CDP session)
+        - timeout_ms (number, 120000)
+      saida:
+        - image_url (string)
+        - image_buffer (Buffer)
+        - generation_time_ms (number)
+      confidence: 0.92
+
+    - name: select-nano-banana-pro
+      agent: browser-engineer
+      description: "Selecionar modelo Nano Banana Pro na interface do Genspark quando disponivel"
+      entrada:
+        - page_session (CDP session)
+      saida:
+        - model_selected (boolean)
+        - model_name (string)
+        - is_free_tier (boolean)
+      confidence: 0.88
+
+    - name: auto-detect-google-profile
+      agent: ux-integrator
+      description: "Auto-detectar e pre-selecionar perfil Chrome com conta Google andrewebemp@gmail.com"
+      entrada:
+        - target_email (string)
+      saida:
+        - profile_index (number)
+        - profile_path (string)
+        - profile_dir (string)
+      confidence: 0.93
+
+    - name: improve-genspark-step-ui
+      agent: ux-integrator
+      description: "Melhorar GensparkStep.tsx - mostrar modelo selecionado, status gratuito, simplificar configuracao"
+      entrada:
+        - component_path (string, src/components/wizard-new/GensparkStep.tsx)
+      saida:
+        - updated_component (boolean)
+        - changes_summary (string[])
+      confidence: 0.85
+
+    - name: chrome-session-manager
+      agent: ipc-architect
+      description: "Criar ChromeSessionManager no main process Electron - detecta Chrome, conecta via CDP, gerencia lifecycle"
+      entrada:
+        - electron_main_path (string, electron/main.js)
+      saida:
+        - manager_module_path (string)
+        - ipc_handlers_registered (string[])
+      confidence: 0.87
+
+    - name: ipc-streaming-progress
+      agent: ipc-architect
+      description: "Substituir polling por streaming bidirecional via IPC para progresso em tempo real"
+      entrada:
+        - current_ipc_handlers (string[])
+      saida:
+        - updated_handlers (string[])
+        - event_types (string[])
+      confidence: 0.83
+
+  template: basic
+  config_mode: extend
+
+metadata:
+  created_at: "2026-02-16T15:00:00Z"
+  source_docs:
+    - ".planning/codebase/STACK.md"
+    - ".planning/codebase/INTEGRATIONS.md"
+    - ".planning/codebase/ARCHITECTURE.md"
+    - ".planning/codebase/CONCERNS.md"
+    - "electron/gensparkPlaywright.js"
+    - "src/components/wizard-new/GensparkStep.tsx"
+  user_adjustments: 0
+  overall_confidence: 0.89
+  target_account: "andrewebemp@gmail.com"
+  target_model: "Nano Banana Pro (gratuito)"

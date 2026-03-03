@@ -1,0 +1,136 @@
+# Generate Images Workflow
+#
+# Fluxo completo de geracao de imagens via Genspark browser automation
+# Conecta ao Chrome, seleciona Nano Banana Pro, e gera lote de imagens
+#
+# Created: 2026-02-16
+
+name: generate-images
+version: 1.0.0
+description: "Fluxo completo: conectar Chrome → selecionar modelo → gerar imagens → importar"
+squad: genspark-browser-automation
+
+metadata:
+  created: 2026-02-16
+  author: squad-creator
+  tags:
+    - workflow
+    - genspark-browser-automation
+    - image-generation
+
+triggers:
+  - type: manual
+    command: "*batch-generate"
+  - type: ui
+    component: "GensparkStep.tsx PlaywrightPanel"
+    action: "handleStart()"
+
+inputs:
+  - name: prompts
+    type: string[]
+    required: true
+    description: "Lista de prompts para gerar imagens"
+  - name: aspectRatio
+    type: string
+    required: false
+    default: "16:9"
+    description: "Proporcao da imagem: 16:9, 1:1, 9:16"
+  - name: google_email
+    type: string
+    required: false
+    default: "andrewebemp@gmail.com"
+    description: "Email da conta Google para auto-detectar perfil Chrome"
+
+steps:
+  - id: connect-chrome
+    name: "Step 1: Connect to Chrome"
+    description: "Detectar Chrome rodando ou lancar com perfil Google logado"
+    action: task
+    task: connect-chrome-cdp
+    inputs:
+      google_email: "{{inputs.google_email}}"
+    on_error: abort
+
+  - id: select-model
+    name: "Step 2: Select Nano Banana Pro"
+    description: "Garantir que o modelo gratuito Nano Banana Pro esta selecionado"
+    action: task
+    task: select-nano-banana-pro
+    depends_on:
+      - connect-chrome
+    inputs:
+      page_session: "{{steps.connect-chrome.output.page}}"
+    on_error: continue  # Non-critical, may use default model
+
+  - id: setup-intercept
+    name: "Step 3: Setup Network Intercept"
+    description: "Configurar interceptacao de rede para detectar imagens geradas"
+    action: task
+    task: network-intercept-images
+    depends_on:
+      - connect-chrome
+    inputs:
+      page_session: "{{steps.connect-chrome.output.page}}"
+    on_error: continue  # Falls back to DOM polling
+
+  - id: generate-batch
+    name: "Step 4: Generate Image Batch"
+    description: "Processar todos os prompts sequencialmente com rate limiting"
+    action: loop
+    depends_on:
+      - select-model
+      - setup-intercept
+    loop:
+      items: "{{inputs.prompts}}"
+      variable: prompt
+      sequential: true
+      steps:
+        - id: inject-prompt
+          name: "Inject prompt into Genspark"
+          action: inline
+          code: |
+            await injectPrompt(page, prompt);
+            await submitPrompt(page);
+        - id: wait-image
+          name: "Wait for generated image"
+          action: inline
+          code: |
+            const image = await waitForImageWithFallback(page, 120000);
+            return image;
+        - id: save-image
+          name: "Save and report image"
+          action: inline
+          code: |
+            saveImage(image, outputFolder, index);
+            sendProgress(index, total);
+    on_error: retry
+    retry:
+      max_attempts: 2
+      delay: 5000
+
+outputs:
+  - name: generated_images
+    from: "{{steps.generate-batch.output}}"
+    description: "Array de imagens geradas com paths e dataUrls"
+  - name: model_used
+    from: "{{steps.select-model.output.model_name}}"
+    description: "Nome do modelo utilizado"
+
+completion:
+  on_success:
+    message: "Geracao concluida: {{outputs.generated_images.length}} imagens via Nano Banana Pro (gratuito)"
+    notify: true
+    auto_import: true
+  on_failure:
+    message: "Geracao falhou - verificar conexao Chrome e status do Genspark"
+    notify: true
+    rollback: false
+
+validation:
+  pre_run:
+    - "Chrome instalado no sistema"
+    - "Pelo menos 1 prompt fornecido"
+    - "Conexao de internet disponivel"
+  post_run:
+    - "Todas as imagens geradas e salvas"
+    - "Imagens tem tamanho minimo (>50KB)"

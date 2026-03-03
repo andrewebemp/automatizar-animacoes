@@ -1,0 +1,140 @@
+# CRONOGRAMA DE ANIMAÇÃO - WHITEBOARD VIDEO
+# Baseado nas imagens geradas (01.png e 02.png) e arquivo SRT
+
+═══════════════════════════════════════════════════════════════════════════════
+IMAGEM 1 (01.png) | 00:00:00,000 → 00:00:48,440 | ~48 segundos
+═══════════════════════════════════════════════════════════════════════════════
+
+Esta imagem contém os seguintes elementos visuais identificados:
+- Quadro "EXECUTAR" com lista 1. Planejar 2. Realizar 3. Avaliar
+- Stick figure apontando para relógio + ampulheta (FOCO)
+- Pessoa concentrada no computador (CONCENTRAÇÃO)
+- Relógio + pessoa caminhando com documento
+- Quadro "CLIENTE FELIZ" → "FEEDBACK POSITIVO"
+- Área direita: Checkmark, "ECONOMIA DE TEMPO", "QUALIDADE" + selo
+
+CRONOGRAMA DE REVELAÇÃO DOS ELEMENTOS:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TEMPO          │ SRT │ ELEMENTO A REVELAR              │ NARRAÇÃO          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:00,000   │  1  │ Quadro "EXECUTAR" com lista     │ "Nessa aula,      │
+│ 00:00:04,600   │     │ numerada (1. Planejar, 2.       │ trataremos da     │
+│                │     │ Realizar, 3. Avaliar)           │ segunda etapa..." │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:05,040   │  2  │ Banner "FOCO" + stick figure    │ "Você verá como   │
+│ 00:00:09,215   │     │ apontando para relógio          │ melhorar a        │
+│                │     │                                  │ execução..."      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:09,240   │  3  │ Ampulheta ao lado do relógio    │ "consiga terminar │
+│ 00:00:11,520   │     │ + área "ECONOMIA DE TEMPO"      │ as tarefas em     │
+│                │     │                                  │ menos tempo."     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:12,160   │  4  │ Relógio grande (esquerda        │ "Idealmente,      │
+│ 00:00:15,855   │     │ inferior) + pessoa andando      │ quando dá o       │
+│                │     │                                  │ horário..."       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:15,880   │  5  │ Pessoa concentrada no           │ "tarefa           │
+│ 00:00:20,335   │     │ computador + balão              │ relacionada...    │
+│                │     │ "CONCENTRAÇÃO"                   │ permanece focado" │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:20,360   │  6  │ Área "QUALIDADE" com selo       │ "rápido possível  │
+│ 00:00:22,080   │     │ de qualidade (estrela)          │ com a devida      │
+│                │     │                                  │ qualidade."       │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:22,800   │  7  │ (Elementos já revelados -       │ "Você não         │
+│ 00:00:28,215   │     │ destacar o computador/celular   │ procrastina e nem │
+│                │     │ sendo evitado)                   │ se distrai..."    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:28,240   │  8  │ (Manter foco na cena de         │ "começa uma longa │
+│ 00:00:30,440   │     │ concentração)                    │ conversa com      │
+│                │     │                                  │ outra pessoa."    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:31,080   │  9  │ Destacar novamente a lista      │ "Você simplesmente│
+│ 00:00:35,175   │     │ de execução                      │ começa a tarefa   │
+│                │     │                                  │ e executa..."     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:35,200   │ 10  │ Seta de transição entre         │ "o início do      │
+│ 00:00:36,440   │     │ elementos                        │ próximo bloco."   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:37,040   │ 11  │ Checkmark grande (canto         │ "Essa é a         │
+│ 00:00:41,840   │     │ superior direito) +             │ execução ideal,   │
+│                │     │ "ECONOMIA DE TEMPO"              │ contínua..."      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:42,840   │ 12  │ "CLIENTE FELIZ" com carrinho    │ "Claro que é      │
+│ 00:00:46,320   │     │ de compras + checkmark           │ praticamente      │
+│                │     │                                  │ impossível..."    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:46,640   │ 13  │ "FEEDBACK POSITIVO" com         │ "o dia todo,      │
+│ 00:00:48,440   │     │ balão de coração/like           │ todos os dias."   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+IMAGEM 2 (02.png) | 00:00:49,000 → 00:01:08,680 | ~20 segundos
+═══════════════════════════════════════════════════════════════════════════════
+
+Esta imagem contém os seguintes elementos visuais identificados:
+- Pessoa subindo escada numa seta grande azul → estrela "IDEAL"
+- Gráficos de barras em calendários "PRODUTIVIDADE CRESCENTE"
+- Banner "REMOVER DISTRAÇÕES"
+- Calendário + pessoa bloqueando distrações (celular, joystick, etc.)
+- "BLOQUEAR TENTAÇÕES"
+
+CRONOGRAMA DE REVELAÇÃO DOS ELEMENTOS:
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TEMPO          │ SRT │ ELEMENTO A REVELAR              │ NARRAÇÃO          │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:49,000   │ 14  │ Pessoa subindo escada +         │ "Mas quanto mais  │
+│ 00:00:52,240   │     │ seta grande apontando para      │ perto você chegar │
+│                │     │ estrela "IDEAL"                  │ desse cenário..." │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:52,520   │ 15  │ Calendários com gráficos de     │ "Porque assim,    │
+│ 00:00:55,840   │     │ barras + "PRODUTIVIDADE         │ cada bloco da sua │
+│                │     │ CRESCENTE"                       │ rotina vai..."    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:00:56,440   │ 16  │ Banner "REMOVER DISTRAÇÕES"     │ "Então a primeira │
+│ 00:01:00,560   │     │ com destaque                     │ coisa a se fazer..│
+│                │     │                                  │ remover distrações│
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:01:01,400   │ 17  │ Ícones de distrações:           │ "Tudo que possa   │
+│ 00:01:04,895   │     │ celular, joystick, megafone,    │ te distrair ou    │
+│                │     │ Facebook, etc.                   │ facilita..."      │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:01:04,920   │ 18  │ Pessoa com gesto de "PARE"      │ "removido, se     │
+│ 00:01:05,920   │     │ bloqueando os ícones            │ possível."        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 00:01:06,320   │ 19  │ Calendário + texto "BLOQUEAR    │ "Ou, pelo menos,  │
+│ 00:01:08,680   │     │ TENTAÇÕES"                       │ ser mais difícil  │
+│                │     │                                  │ de acessar."      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+
+═══════════════════════════════════════════════════════════════════════════════
+INSTRUÇÕES GERAIS DE ANIMAÇÃO
+═══════════════════════════════════════════════════════════════════════════════
+
+1. EFEITO DE REVELAÇÃO:
+   - Usar efeito "draw-on" (mão desenhando) para cada elemento
+   - Iniciar a revelação ~0.3s ANTES do tempo indicado para sincronização
+   - Duração da animação de revelação: 1-2 segundos por elemento
+
+2. TRANSIÇÃO ENTRE IMAGENS:
+   - Ao chegar em 00:00:48,440, fazer fade-out da Imagem 1
+   - Fade-in da Imagem 2 iniciando em 00:00:49,000
+   - Transição suave de ~0.5 segundos
+
+3. ELEMENTOS JÁ REVELADOS:
+   - Manter visíveis todos os elementos anteriores
+   - Pode-se adicionar leve destaque (brilho) no elemento atual
+
+4. SINCRONIZAÇÃO COM ÁUDIO:
+   - O elemento deve estar COMPLETAMENTE visível quando a narração
+     correspondente terminar
+   - Começar a revelar antes do início da fala para timing natural
+
+5. VELOCIDADE DE DESENHO:
+   - Elementos simples (ícones): 0.8-1.2 segundos
+   - Elementos complexos (quadros com texto): 1.5-2.5 segundos
+   - Textos longos: revelar palavra por palavra ou linha por linha

@@ -1,0 +1,61 @@
+name: genspark-browser-automation
+version: 1.0.0
+description: "Automacao confiavel de geracao de imagens via Genspark no navegador, usando conta Google logada com acesso gratuito ao Nano Banana Pro"
+author: "automatizar-animacoes"
+license: MIT
+slashPrefix: genspark
+
+aios:
+  minVersion: "2.1.0"
+  type: squad
+
+components:
+  agents:
+    - browser-engineer.md
+    - ux-integrator.md
+    - ipc-architect.md
+  tasks:
+    - connect-chrome-cdp.md
+    - resilient-selectors.md
+    - network-intercept-images.md
+    - select-nano-banana-pro.md
+    - auto-detect-google-profile.md
+    - improve-genspark-step-ui.md
+    - chrome-session-manager.md
+    - ipc-streaming-progress.md
+  workflows:
+    - generate-images.yaml
+  checklists:
+    - browser-automation-quality.md
+  templates: []
+  tools: []
+  scripts: []
+
+config:
+  extends: extend
+  coding-standards: config/coding-standards.md
+  tech-stack: config/tech-stack.md
+  source-tree: config/source-tree.md
+
+dependencies:
+  node:
+    - puppeteer
+    - puppeteer-core
+  python: []
+  squads: []
+
+tags:
+  - browser-automation
+  - image-generation
+  - genspark
+  - puppeteer
+  - electron
+  - nano-banana-pro
+
+metadata:
+  target_account: "andrewebemp@gmail.com"
+  target_model: "Nano Banana Pro"
+  cost: "gratuito"
+  existing_files:
+    - "electron/gensparkPlaywright.js"
+    - "src/components/wizard-new/GensparkStep.tsx"

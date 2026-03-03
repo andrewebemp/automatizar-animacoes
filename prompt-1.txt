@@ -1,0 +1,64 @@
+Whiteboard animation illustration, hand-drawn sketch style with black outlines on pure white background. Clean educational explainer aesthetic.
+
+ESTILO VISUAL OBRIGATÓRIO:
+- Fundo branco puro (#FFFFFF)
+- Traços pretos estilo desenho à mão/marcador
+- Elementos em azul (#0077CC) e vermelho (#CC0000) como destaques
+- Estilo stick figure para pessoas
+- Ícones simplificados e reconhecíveis
+- Layout da esquerda para direita ou de cima para baixo
+- Espaçamento generoso entre elementos para animação posterior
+
+CONTEÚDO DA CENA (13 elementos distintos para animar sequencialmente):
+
+Elemento 1 (00:00:00,000 - 00:00:04,600): "Nessa aula, trataremos da
+segunda etapa do processo Peão, que é executar."
+  → Representar com: checklist numerada com setas sequenciais
+Elemento 2 (00:00:05,040 - 00:00:09,215): "Você verá como melhorar a execução dos
+blocos para que tenha mais foco e assim"
+  → Representar com: pessoa focada no computador com balão 'CONCENTRAÇÃO'
+Elemento 3 (00:00:09,240 - 00:00:11,520): "consiga terminar as
+tarefas em menos tempo."
+  → Representar com: relógio com checkmark ou ampulheta
+Elemento 4 (00:00:12,160 - 00:00:15,855): "Idealmente, quando dá o horário para
+iniciar um bloco, você começa a próxima"
+  → Representar com: relógio com checkmark ou ampulheta
+Elemento 5 (00:00:15,880 - 00:00:20,335): "tarefa relacionada a esse bloco e
+permanece focado em terminá-la o mais"
+  → Representar com: calendário ou lista de tarefas
+Elemento 6 (00:00:20,360 - 00:00:22,080): "rápido possível com a devida qualidade."
+  → Representar com: relógio com checkmark ou ampulheta
+Elemento 7 (00:00:22,800 - 00:00:28,215): "Você não procrastina e nem se distrai, não
+vê nada no celular, nada na internet ..."
+  → Representar com: smartphone/laptop com X, pessoa bloqueando distrações
+Elemento 8 (00:00:28,240 - 00:00:30,440): "começa uma longa conversa
+com outra pessoa."
+  → Representar com: balões de fala, stick figures conversando
+Elemento 9 (00:00:31,080 - 00:00:35,175): "Você simplesmente começa a tarefa e
+executa até terminá-la ou até"
+  → Representar com: checklist numerada com setas sequenciais
+Elemento 10 (00:00:35,200 - 00:00:36,440): "o início do próximo bloco."
+  → Representar com: calendário ou lista de tarefas
+Elemento 11 (00:00:37,040 - 00:00:41,840): "Essa é a execução ideal,
+contínua, focada, rápida e com qualidade."
+  → Representar com: selo de qualidade com estrela, documento com 'A+'
+Elemento 12 (00:00:42,840 - 00:00:46,320): "Claro que é praticamente impossível isso
+acontecer em todos os blocos,"
+  → Representar com: calendário ou lista de tarefas
+Elemento 13 (00:00:46,640 - 00:00:48,440): "o dia todo, todos os dias."
+  → Representar com: grupo de pessoas, calendário com múltiplos dias
+
+ELEMENTOS VISUAIS SUGERIDOS:
+relógio, ampulheta, pessoa focada, lupa, selo de qualidade, estrela, smartphone com X, laptop, checklist, engrenagens, escada, pessoa subindo, estrela no topo
+
+COMPOSIÇÃO:
+- Imagem 1 de 2
+- Duração total: 44.0 segundos
+- Todos os elementos devem ter contornos claros para facilitar animação de "reveal"
+- Manter espaço entre elementos para animação sequencial
+- Cada elemento deve ser visualmente distinto e separável
+
+ASPECT RATIO: 16:9
+RESOLUÇÃO: Alta definição para vídeo
+
+NÃO INCLUIR: fotografias realistas, degradês complexos, sombras realistas, elementos 3D, cores fora da paleta especificada.
